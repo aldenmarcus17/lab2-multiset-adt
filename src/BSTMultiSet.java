@@ -55,10 +55,7 @@ public class BSTMultiSet extends MultiSet {
      */
     @Override
     int count(int item) {
-        if (bst.contains(item)) {
-            return bst.count(item);
-        }
-        return -1;
+        return bst.count(item);
     }
 
     /**
@@ -66,9 +63,6 @@ public class BSTMultiSet extends MultiSet {
      */
     @Override
     int size() {
-        if (! bst.isEmpty()) {
-            return bst.getSize();
-        }
-        return -1;
+        return bst.getSize();
     }
 }
