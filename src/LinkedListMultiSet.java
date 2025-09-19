@@ -44,19 +44,34 @@ public class LinkedListMultiSet extends MultiSet {
     }
 
     public boolean contains(int item) {
+        Node cur = this.front;
+        while (cur != null) {
+            if (cur.item == item) {
+                return true;
+            }
+            cur = cur.next;
+        }
         return false;
     }
 
     public boolean isEmpty() {
-        return false;
+        return this.front == null;
     }
 
 
     public int count(int item) {
-        return -1;
+        int num_seem = 0;
+        Node cur = this.front;
+        while (cur != null) {
+            if (cur.item == item) {
+                num_seem++;
+            }
+            cur = cur.next;
+        }
+        return num_seem;
     }
 
     public int size() {
-        return -1;
+        return this.size;
     }
 }
